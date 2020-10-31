@@ -29,6 +29,7 @@ namespace todolist_api.Controllers
         }
 
         // GET: api/Task/5
+        [EnableCors("Todolist")]
         [HttpGet("{id}")]
         public async Task<ActionResult<Task>> GetTask(int id)
         {
@@ -45,6 +46,7 @@ namespace todolist_api.Controllers
         // PUT: api/Task/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [EnableCors("Todolist")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTask(int id, Task task)
         {
@@ -77,6 +79,7 @@ namespace todolist_api.Controllers
         // POST: api/Task
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [EnableCors("Todolist")]
         [HttpPost]
         public async Task<ActionResult<Task>> PostTask(Task task)
         {
@@ -87,6 +90,7 @@ namespace todolist_api.Controllers
         }
 
         // DELETE: api/Task/5
+        [EnableCors("Todolist")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Task>> DeleteTask(int id)
         {
