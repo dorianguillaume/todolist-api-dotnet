@@ -3,14 +3,16 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace todolist_api.Migrations
 {
     [DbContext(typeof(TodolistContext))]
-    partial class TodolistContextModelSnapshot : ModelSnapshot
+    [Migration("20201101220542_UpdateTaskModel")]
+    partial class UpdateTaskModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +36,7 @@ namespace todolist_api.Migrations
                     b.Property<DateTime>("DateEnd")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("Important")
+                    b.Property<bool>("Done")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
